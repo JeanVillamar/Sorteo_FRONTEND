@@ -1,0 +1,7 @@
+{
+  "/api": {
+    "target": "https://sistemasorteos.onrender.com",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
