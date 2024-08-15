@@ -1,0 +1,14 @@
+<div class="sorteo-container">
+    <div class="sorteo-image">
+      <img [src]="sorteo.imagen" alt="{{ sorteo.premio }}">
+    </div>
+    <div class="sorteo-info-container">
+        <h2>SORTEO DE iPHONE</h2>
+        <div class="sorteo-info">
+            <p><strong>Fecha:</strong> {{ sorteo.fecha }}</p>
+            <p><strong>Premio:</strong> {{ sorteo.premio }}</p>
+            <p><strong>Ganador:</strong> {{ sorteo.ganador }}</p>
+            <p><strong>Descripción:</strong> {{ sorteo.descripcion }}</p>
+        </div>
+    </div>
+</div>

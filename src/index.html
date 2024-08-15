@@ -1,38 +1,20 @@
 <!doctype html>
 <html lang="en">
+ 
 <head>
-  <meta charset="utf-8">
-  <title>Frontend</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const urlParams = new URLSearchParams(window.location.search);
-      const token = urlParams.get('token');
-      const id = urlParams.get('id');
-      const name = urlParams.get('name');
-
-      if (token && id && name) {
-        document.getElementById('welcome').innerText = `Welcome, ${name}`;
-        document.getElementById('user-id').innerText = `User ID: ${id}`;
-        document.getElementById('access-token').innerText = `Access Token: ${token}`;
-      } else {
-        document.getElementById('login-links').style.display = 'block';
-      }
-    });
-  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js" integrity="sha384-pzjw8f+ua7Kw1TIqCh5Jnu5ijMcNf4xBeMlCxl5D5f7/sKx4pXgiZR+bljv8p5eJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgYbZv8nE5BRgtW0ne3DeL8T6XZQhyn2sZ6rNHLdFLrtiOBnNtg" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GiveAway</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="content">
-    <h1 id="welcome"></h1>
-    <p id="user-id"></p>
-    <p id="access-token"></p>
-    <div id="login-links" style="display: none;">
-      <a href="https://sistemasorteos.onrender.com/auth/facebook">Login with Facebook</a>
-      <a href="https://sistemasorteos.onrender.com/auth/google">Login with Google</a>
-      <a href="https://sistemasorteos.onrender.com/auth/instagram">Login with Instagram</a>
-    </div>
-  </div>
+  <app-root></app-root>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="assets/js/confetti.js"></script>
 </body>
 </html>

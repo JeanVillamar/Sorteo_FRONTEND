@@ -1,0 +1,60 @@
+<app-navbar *ngIf="mostrarNavbar"></app-navbar>
+<div class="container">
+  <div class="left-panel">
+    <img src="assets/images/funcionamiento/telefono.jpg" alt="Imagen de teléfono">
+  </div>
+  <div class="right-panel">
+    <div class="content">
+      <h2 class = "titulo-general">¿Cómo funciona?</h2>
+      <div class="info-section" (mouseover)="showTooltip('post')" (mouseleave)="hideTooltip()">
+        <h3 class="info-title">Selecciona el post</h3>
+        <p class="info-description" *ngIf="activeTooltip === 'post'">
+          Elige el post de tu cuenta, donde han comentado todos los participantes del sorteo.
+        </p>
+      </div>
+      <div class="info-section" (mouseover)="showTooltip('filtros')" (mouseleave)="hideTooltip()">
+        <h3 class="info-title">Aplicar filtros y reglas</h3>
+        <p class="info-description" *ngIf="activeTooltip === 'filtros'">
+          Aplica filtros y reglas personalizadas para definir condiciones de participación.
+        </p>
+      </div>
+      <div class="info-section" (mouseover)="showTooltip('ganador')" (mouseleave)="hideTooltip()">
+        <h3 class="info-title">Selecciona el ganador</h3>
+        <p class="info-description" *ngIf="activeTooltip === 'ganador'">
+          Utiliza la herramienta para seleccionar aleatoriamente al ganador del sorteo.
+        </p>
+      </div>
+      <div class="info-section" (mouseover)="showTooltip('anuncia')" (mouseleave)="hideTooltip()">
+        <h3 class="info-title">Anuncia</h3>
+        <p class="info-description" *ngIf="activeTooltip === 'anuncia'">
+          Anuncia al ganador y gestiona la entrega del premio.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <div class="containerAbajo">
+    <div class="right-panel">
+
+
+      <div class="card">
+        <div class="card-details">
+          <p class="text-title">¡Haz crecer los leads!</p>
+          <p class="text-body">▶ Crea sorteos para captar leads.</p>
+          <p class="text-body">▶ Personaliza el diseño del sorteo</p>
+          <p class="text-body">▶ Haz crecer tu negocio con visitas</p>
+          <p class="text-body">▶ Aumenta la interacción con tus clientes</p>
+        </div>
+        <button class="card-button">¡Atrevete!</button>
+      </div>
+
+
+    </div>
+    <div class="r-panel">
+      <img src="assets/images/funcionamiento/ruleta.png" alt="Imagen de ruleta">
+    </div>
+  </div>

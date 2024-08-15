@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .content {
+    margin-top: 60px; /* Asegúrate de que esto coincida con la altura de tu navbar */
+  }

@@ -1,0 +1,144 @@
+
+<div class="historial">
+    <div class="historial-header">
+        <h3 class="historial-titulo">Historial de sorteos</h3>
+        <form class="form">
+            <button>
+                <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
+                    <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+            <input class="input" placeholder="Buscar" required="" type="text">
+            <button class="reset" type="reset">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </form>
+    </div>
+
+    <div class="historial-content">
+        <!-- Ejemplo de tarjeta de historial -->
+        <div class="card">
+            <div class="img"></div>
+            <div class="textBox">
+                <div class="textContent">
+                    <p class="h1">iPhone</p>
+                    <span class="span">12 min ago</span>
+                </div>
+                <p class="p">Terminado</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img"></div>
+            <div class="textBox">
+                <div class="textContent">
+                    <p class="h1">iPhone</p>
+                    <span class="span">12 min ago</span>
+                </div>
+                <p class="p">Terminado</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img"></div>
+            <div class="textBox">
+                <div class="textContent">
+                    <p class="h1">iPhone</p>
+                    <span class="span">12 min ago</span>
+                </div>
+                <p class="p">Terminado</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img"></div>
+            <div class="textBox">
+                <div class="textContent">
+                    <p class="h1">iPhone</p>
+                    <span class="span">12 min ago</span>
+                </div>
+                <p class="p">Terminado</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img"></div>
+            <div class="textBox">
+                <div class="textContent">
+                    <p class="h1">iPhone</p>
+                    <span class="span">12 min ago</span>
+                </div>
+                <p class="p">Terminado</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img"></div>
+            <div class="textBox">
+                <div class="textContent">
+                    <p class="h1">iPhone</p>
+                    <span class="span">12 min ago</span>
+                </div>
+                <p class="p">Terminado</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img"></div>
+            <div class="textBox">
+                <div class="textContent">
+                    <p class="h1">iPhone</p>
+                    <span class="span">12 min ago</span>
+                </div>
+                <p class="p">Terminado</p>
+            </div>
+        </div>
+        <!-- Fin de ejemplo de tarjeta de historial -->
+
+        <!-- Aquí el backend deberá llenar los sorteos históricos del usuario -->
+        <!-- Ejemplo de código para el backend -->
+        <!--
+            <script>
+                // Supongamos que `sorteos` es un array de objetos con la información de cada sorteo
+                const sorteos = [
+                    { titulo: 'iPhone', tiempo: '12 min ago', estado: 'Terminado' },
+                    { titulo: 'Samsung Galaxy', tiempo: '30 min ago', estado: 'No terminado' },
+                    // Más sorteos
+                ];
+
+                const historialContent = document.querySelector('.historial-content');
+                
+                sorteos.forEach(sorteo => {
+                    const card = document.createElement('div');
+                    card.classList.add('card');
+
+                    card.innerHTML = `
+                        <div class="img"></div>
+                        <div class="textBox">
+                            <div class="textContent">
+                                <p class="h1">${sorteo.titulo}</p>
+                                <span class="span">${sorteo.tiempo}</span>
+                            </div>
+                            <p class="p">${sorteo.estado}</p>
+                        </div>
+                    `;
+
+                    historialContent.appendChild(card);
+                });
+            </script>
+        -->
+    </div>
+</div>
+<!-- Aquí va el backend para llenar el historial de sorteos -->
+<!-- La lógica del backend debería obtener los datos de los sorteos y crear las tarjetas dinámicamente -->
+<!-- Ejemplo de cómo puede ser el backend: -->
+<!-- 
+    <script>
+        document.querySelector('input').addEventListener('input', function() {
+            // Lógica de búsqueda en el backend
+            // Filtrar los resultados y actualizar las tarjetas de historial
+        });
+    </script>
+-->

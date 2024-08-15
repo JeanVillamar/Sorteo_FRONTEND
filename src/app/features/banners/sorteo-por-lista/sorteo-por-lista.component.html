@@ -1,0 +1,19 @@
+<div class="sorteo-lista-container">
+  <h2>SORTEO POR LISTA</h2>
+  <p>Ingresa una lista de participantes en la caja de texto o a través de un archivo.</p>
+  <div class="data-container">
+    <div class="input-container">
+      <ul>
+        <li *ngFor="let participante of participantes; let i = index">
+          <span>{{ participante }}</span>
+          <i class="fas fa-times" (click)="eliminarParticipante(i)"></i> 
+        </li>
+      </ul>
+    </div>
+    <div class="button-container">
+      <button (click)="ingresarLista()">Ingresar lista <i class="fas fa-check"></i></button>
+      <button (click)="subirArchivo()">Subir archivo <i class="fas fa-plus"></i></button>
+      <button (click)="volverASeleccionar()">Volver a seleccionar <i class="fas fa-redo"></i></button>
+    </div>
+  </div>
+</div>

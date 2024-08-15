@@ -1,0 +1,41 @@
+<!-- Para ver esta otra pagina dirigirse a este link : http://localhost:4200/other-home -->
+
+<div class="global-margin">
+    <div id="navbar">
+        <app-navbar *ngIf="mostrarNavbar"></app-navbar>
+    </div>
+
+    <div id="pagina-antigua">
+        <app-pagina-antigua></app-pagina-antigua>
+    </div>
+
+    <!-- 
+    <div id="sorteo-instagram">
+        <app-sorteo-instagram></app-sorteo-instagram>
+    </div> 
+    -->
+
+    <div id="usadas">
+        <app-usadas></app-usadas>
+    </div>
+
+    <div id="testimonios">
+        <app-testimonios></app-testimonios>
+    </div>
+
+    <div id="funcionamiento">
+        <app-funcionamiento [mostrarNavbar]="false"></app-funcionamiento>
+    </div>
+
+    <div id="nosotros">
+        <app-nosotros></app-nosotros>
+    </div>
+
+    <div id="planes">
+        <app-planes></app-planes>
+    </div>
+
+    <div id="contactos">
+        <app-contactos></app-contactos>
+    </div>
+</div>

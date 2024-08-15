@@ -1,0 +1,25 @@
+<div class="testimonial-slider">
+  <button class="nav-button left-button" (click)="previousTestimonial()">
+    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#6B7280" viewBox="0 0 24 24">
+      <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    </svg>
+  </button>
+  <div class="testimonials-wrapper" [style.transform]="'translateX(' + transformValue + '%)'">
+    <div class="testimonial" *ngFor="let testimonial of visibleTestimonials">
+      <img [src]="testimonial.img" alt="{{testimonial.name}}" class="profile-pic">
+      <div class="testimonial-info">
+        <div class="name">{{testimonial.name}}</div>
+        <div class="username">{{testimonial.username}}</div>
+        <div class="rating">
+          <span class="star">⭐</span>{{testimonial.rating}}/5
+        </div>
+        <div class="comment">“{{testimonial.comment}}”</div>
+      </div>
+    </div>
+  </div>
+  <button class="nav-button right-button" (click)="nextTestimonial()">
+    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#6B7280" viewBox="0 0 24 24">
+      <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+    </svg>
+  </button>
+</div>

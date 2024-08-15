@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 50px;
+  
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+h1 .highlight {
+  color: #007BFF; 
+}
+
+p {
+  color: #555;
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+.sorteos {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  padding: 100px;
+}
+
+.sorteo {
+  position: relative; /* Añadir posición relativa al contenedor */
+  padding: 50px;
+  border-radius: 10px;
+  text-align: center;
+  border: 5px solid #6cb3ff;
+  width: 25%;
+  box-sizing: border-box;
+  
+}
+
+.sorteo h2 {
+  color: #007BFF;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.sorteo p {
+  color: #666;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.select-button {
+  position: absolute; /* Posición absoluta para los botones */
+  bottom: -60px; /* Ajusta según sea necesario */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.small-logo {
+  width: 50px; /* Ajusta el ancho según tus necesidades */
+  height: auto; /* Mantiene la proporción de la imagen */
+}

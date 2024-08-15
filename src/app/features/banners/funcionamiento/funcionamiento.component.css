@@ -1,0 +1,187 @@
+
+.container {
+  background-color: #735a92;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
+.left-panel, .right-panel {
+  flex: 1;
+  text-align: center;
+}
+
+.left-panel img {
+  clip-path: polygon(0 100%, 0 0, 100% 100%);
+  width: 50vw;
+  height: 50vw;
+  max-width: 100%;
+}
+
+.r-panel img {
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+  width: 50vw;
+  height: 50vw;
+  max-width: 100%;
+}
+
+.content {
+  padding: 20px;
+  border-radius: 8px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.info-section {
+  position: relative;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.info-section:hover {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h3.info-title {
+  font-size: 30px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.titulo-general{
+  font-size: 50px;
+  color: black;
+  padding-bottom: 40px;
+}
+
+.info-section:hover h3.info-title {
+  color: #333;
+}
+
+.info-description {
+  font-size: 16px;
+  color: #333;
+  display: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  background-color: #ffffff;
+}
+
+.info-section:hover .info-description {
+  display: block;
+  animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-panel, .right-panel {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .left-panel img, .right-panel img {
+    width: 100%;
+    border-radius: 8px;
+  }
+}
+
+.containerAbajo {
+  background-color: #01987a;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+/* Para proyectos pepas */
+.card {
+  width: 500px;
+  height: 500px;
+  border-radius: 20px;
+  background: #ececec;
+  position: relative;
+  padding: 1.8rem;
+  border: 2px solid #c3c6ce;
+  transition: 0.5s ease-out;
+  overflow: visible;
+  left: 180px;
+ }
+ 
+ .card-details {
+  color: black;
+  height: 100%;
+  gap: .5em;
+  display: grid;
+  place-content: center;
+ }
+ 
+ .card-button {
+  transform: translate(-50%, 125%);
+  width: 60%; 
+  border-radius: 1rem;
+  border: none;
+  background-color: #008bf8;
+  color: #fff;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.3s ease-out;
+ }
+ 
+ .text-body {
+  color: rgb(134, 134, 134);
+  font-size: 17px;
+  text-align: left;
+  padding-left: 40px;
+  padding-bottom: 10px;
+ }
+ 
+ /*Text*/
+ .text-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding-bottom: 20px;
+  text-align: center;
+ }
+ 
+ /*Hover      008bf8   016b98    */
+ .card:hover {
+  border-color: #016b98;
+  padding-right: 50px;
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.25);
+ }
+ 
+ .card:hover .card-button {
+  transform: translate(-50%, 50%);
+  opacity: 1;
+ }

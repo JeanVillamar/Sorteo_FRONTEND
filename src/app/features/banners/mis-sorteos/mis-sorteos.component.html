@@ -1,0 +1,50 @@
+<div class="general">
+    <h3 class="titulo">Mis sorteos</h3>
+
+    <div class="inputbox">
+        <input required="required" type="text">
+        <span>Buscar</span>
+        <i></i>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí van los datos de la tabla que serán rellenados por el backend -->
+                <!-- Ejemplo de fila de datos -->
+                <tr>
+                    <td>Tuti</td>
+                    <td>01/01/2024</td>
+                </tr>
+                <tr>
+                    <td>Ferreteria Pepito</td>                    
+                    <td>02/01/2024</td>
+                </tr>
+                <!-- Fin de ejemplo de fila de datos -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="button-container">
+        <button onclick="window.location.href='/historial'">Ver todos</button>
+    </div>
+</div>
+
+<!-- Aquí va el backend para que el usuario pueda buscar a través del input -->
+<!-- La búsqueda debería filtrar los resultados en la tabla de acuerdo a lo ingresado en el input -->
+<!-- Ejemplo de cómo puede ser el backend: -->
+<!-- 
+    <script>
+        document.querySelector('input').addEventListener('input', function() {
+            // Lógica de búsqueda en el backend
+            // Filtrar los resultados y actualizar la tabla
+        });
+    </script>
+-->
+

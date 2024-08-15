@@ -1,0 +1,124 @@
+<div class="container">
+
+    <div class="settings">
+        <div class="setting-section">
+            <div class="section-header">
+                <h3>Ajustes del sorteo</h3>
+            </div>
+            <div class="section-body">
+                <div class="setting-item">
+                    <input type="text" class="name" placeholder="Definir Nombre" (input)="onInput($event)" />
+                </div>
+                <div class="setting-item">
+                    <label for="winners">Ganadores</label>
+                    <input type="number" id="winners" [(ngModel)]="numWinners" class="setting-input" min="1" />
+                </div>
+                <div class="setting-item setting-raffle">
+                    <div class="top-part">
+                        <label for="raffle-mode">Modo rifa</label>
+                        <label class="switch">
+                            <input type="checkbox" id="raffle-mode">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="bottom-part">
+                        <p>
+                            <span class="bold-colored-text">Modo rifa:</span>
+                            <span class="colored-text"> Saca jugadores de la lista y deja que el siguiente sea
+                                ganador.</span>
+                        </p>
+                        <div class="raffle-count">3</div>
+                        <!-- Esto es para cuando se quieran ingresar cualquier numero
+                      <input type="text"  class="raffle-count-input" placeholder="#"/> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="setting-section">
+            <div class="section-header">
+                <h3>Ajustes de los participantes</h3>
+            </div>
+            <div class="section-body">
+                <div class="setting-item">
+                    <label for="filter-duplicates">Filtrar por duplicados</label>
+                    <label class="switch">
+                        <input type="checkbox" id="filter-duplicates">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label for="filter-comments">Filtrar por comentarios</label>
+                    <label class="switch">
+                        <input type="checkbox" id="filter-comments">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label for="filter-reactions">Filtrar por reacción</label>
+                    <label class="switch">
+                        <input type="checkbox" id="filter-reactions">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+                <div class="setting-item setting-participants">
+                    <div class="top-part">
+                        <label for="participants-mode">Participantes:</label>
+                    </div>
+                    <div class="bottom-part participants-list">
+                        <div *ngFor="let participant of participants; let i = index" class="participant">
+                            <p (click)="toggleCheck(i)">{{ participant.name }}</p>
+                            <i class="fas fa-check participant-icon" [ngClass]="{'checked': participant.checked}"
+                                (click)="toggleCheck(i)"></i>
+                            <i class="fas fa-trash participant-remove" (click)="removeParticipant(i)"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="setting-item name-mail">
+                    <input type="text" class="name-mail" placeholder="Nombre.Correo" [(ngModel)]="newParticipant" />
+                    <i class="fas fa-plus add-icon" (click)="addParticipant()"></i>
+                </div>
+            </div>
+        </div>
+        <div class="setting-section">
+            <div class="section-header">
+                <h3>Personalización empresarial</h3>
+            </div>
+            <div class="section-body">
+                <div class="setting-item logo">
+                    <label for="logo">Subir Logo</label>
+                    <i class="fas fa-plus add-icon"></i>
+                </div>
+                <div class="setting-item topic">
+                    <label for="topic">Elegir tema</label>
+                    <i class="fas fa-th-large"></i>
+                </div>
+
+                <div class="setting-item setting-publication">
+                    <div class="top-part">
+                        <label for="publication-mode">Publicación:</label>
+                        <i class="fas fa-images photo"></i>
+                    </div>
+                    <div class="bottom-part publication-list">
+                        <div *ngFor="let publication of publications; let i = index" class="publication">
+                            <p>{{ publication.name }}</p>
+                            <i class="fas fa-arrow-up publication-icon" (click)="toggleUp()"></i>
+                            <i class="fas fa-trash publication-remove" (click)="removePublication(i)"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="start-draw-button" (click)="randomSelection()">¡Empezar Sorteo!</button>
+    
+    <!-- Popup overlay -->
+    <div *ngIf="showPopup" class="popup-overlay">
+        <div class="popup-content">
+        <h2>Ganadores</h2>
+        <p *ngFor="let winner of winners">¡El participante ganador es: {{ winner }}!</p>
+        <button (click)="closePopup()">Cerrar</button>
+        </div>
+    </div>
+</div>

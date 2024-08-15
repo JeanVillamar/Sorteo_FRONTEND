@@ -1,0 +1,126 @@
+.sorteo-lista-container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #222; 
+  text-align: center;
+  color: white;
+}
+
+.sorteo-lista-container h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.sorteo-lista-container p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.data-container {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; 
+  
+}
+
+.input-container {
+  margin: 0  20px;
+  padding: 10px;
+  background: linear-gradient(to right, #745c94, #2ca6dc);
+  border-radius: 10px; 
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 100px;
+}
+
+
+.input-container ul {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  min-width: 400px;
+  max-height: 210px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow-y: auto;
+}
+
+.input-container li {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  width: 400px;
+  padding: 8px 20px;
+  border: 1px solid #939292;
+  border-radius: 20px;
+  margin-bottom: 10px; 
+  background-color: white;
+  color: black;
+}
+
+.input-container li i {
+  cursor: pointer;
+  color: #171616;
+}
+
+.input-container li i:hover{
+  color: #ff0808;
+}
+
+
+
+.button-container button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 60px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(to right, #4a90e2, #a094e8);
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+  width: 300px; 
+  margin-left: 60px;
+}
+
+.button-container button i {
+  margin-left: 10px;
+}
+
+.button-container button:hover {
+  background: linear-gradient(to right, #3a70c2, #9074e8);
+}
+
+@media (max-width: 860px) {
+  .data-container {
+    flex-direction: column;
+  }
+  .button-container  {
+    margin-top: 30px;
+  }
+  .button-container button {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 530px) {
+  .input-container ul {
+    min-width: 300px;
+  }
+  .input-container li {
+    width: 300px;
+  }
+  
+  .sorteo-lista-container p {
+   padding: 10px;
+  }
+}

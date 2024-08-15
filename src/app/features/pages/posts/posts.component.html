@@ -1,0 +1,26 @@
+<app-nav-bar></app-nav-bar>
+<div class="post-viewer">
+    <div class="container">
+        <div class="navbar-profile2">
+            <img src="assets/images/navbar/profile-icon.png" alt="Profile Icon">
+        </div>
+    </div>
+    <h2>Hola, {{ userName }}</h2> <!-- Aquí se muestra el nombre del usuario -->
+    <p>Por favor, selecciona un post</p>
+
+    <div class="images">
+      <div 
+        class="image" 
+        *ngFor="let photo of photos" 
+        [class.selected]="isSelected(photo.id)"
+        (click)="selectPhoto(photo.id)"
+      >
+        <img [src]="photo.image.source" [alt]="'Photo ' + photo.id">
+        <!-- <div class="image-name">{{ photo.id }}</div> Aquí se muestra el ID de la foto -->
+      </div>
+    </div>
+    
+    <!-- Botón para cargar más fotos -->
+  <button *ngIf="nextUrl" class="load-more-button" (click)="loadMorePhotos()">Cargar más fotos</button>
+
+    

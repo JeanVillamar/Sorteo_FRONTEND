@@ -1,0 +1,311 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.general {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    height: 80vh;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+    padding: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.inputbox {
+    position: relative;
+    width: 250px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.inputbox input {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+}
+
+.inputbox span {
+    position: absolute;
+    left: 0;
+    padding: 20px 20px 10px;
+    font-size: 1em;
+    color: #161616;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    pointer-events: none;
+    font-weight: bold;
+}
+
+.inputbox input:valid ~span,
+.inputbox input:focus ~span {
+    color: #0064d6;
+    transform: translateX(-10px) translateY(-34px);
+    font-size: 0.75em;
+}
+
+.inputbox i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #0064d6;
+    border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 9;
+}
+
+.inputbox input:valid ~i,
+.inputbox input:focus ~i {
+    height: 44px;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #0064d6;
+    color: white;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #0064d6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #004bb5;
+}
+
+/* Estilos para el componente historial */
+.historial {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px;
+    height: 100vh;
+    width: 100%;
+    background-color: #9176a4;
+}
+
+.historial-titulo {
+    font-size: 50px;
+    font-weight: bold;
+    color: #fff9f9;
+    margin-bottom: 20px;
+}
+
+.historial-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.form button {
+    border: none;
+    background: none;
+    color: #8b8ba7;
+}
+
+.form {
+    --timing: 0.3s;
+    --width-of-input: 200px;
+    --height-of-input: 40px;
+    --border-height: 2px;
+    --input-bg: #fff;
+    --border-color: #2f2ee9;
+    --border-radius: 30px;
+    --after-border-radius: 1px;
+    position: relative;
+    width: var(--width-of-input);
+    height: var(--height-of-input);
+    display: flex;
+    align-items: center;
+    padding-inline: 0.8em;
+    border-radius: var(--border-radius);
+    transition: border-radius 0.5s ease;
+    background: var(--input-bg,#fff);
+}
+
+.input {
+    font-size: 0.9rem;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    padding-inline: 0.5em;
+    padding-block: 0.7em;
+    border: none;
+}
+
+.form:before {
+    content: "";
+    position: absolute;
+    background: var(--border-color);
+    transform: scaleX(0);
+    transform-origin: center;
+    width: 100%;
+    height: var(--border-height);
+    left: 0;
+    bottom: 0;
+    border-radius: 1px;
+    transition: transform var(--timing) ease;
+}
+
+.form:focus-within {
+    border-radius: var(--after-border-radius);
+}
+
+input:focus {
+    outline: none;
+}
+
+.form:focus-within:before {
+    transform: scale(1);
+}
+
+.reset {
+    border: none;
+    background: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+input:not(:placeholder-shown) ~ .reset {
+    opacity: 1;
+    visibility: visible;
+}
+
+.form svg {
+    width: 17px;
+    margin-top: 3px;
+}
+
+/* Estilos para las tarjetas de historial */
+.historial-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.card {
+    width: 100%;
+    max-width: 290px;
+    height: 70px;
+    background: #353535;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    backdrop-filter: blur(10px);
+    transition: 0.5s ease-in-out;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.img {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background: linear-gradient(#d7cfcf, #9198e5);
+}
+
+.card:hover > .img {
+    transition: 0.5s ease-in-out;
+    background: linear-gradient(#9198e5, #712020);
+}
+
+.textBox {
+    width: calc(100% - 90px);
+    margin-left: 10px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.textContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.span {
+    font-size: 10px;
+}
+
+.h1 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.p {
+    font-size: 12px;
+    font-weight: lighter;
+}

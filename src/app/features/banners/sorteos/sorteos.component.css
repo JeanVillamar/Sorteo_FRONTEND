@@ -1,0 +1,707 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e1e3e4;
+    padding: 20px;
+    max-height: 700px;
+    position: relative; /* Position relative to ensure it doesn't affect the z-index of children */
+    z-index: 1; /* Ensure container has a lower z-index */
+}
+
+.header {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    border: 2px solid #7d3c98;
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px;
+    width: 400px;
+}
+
+.input-group input {
+    background-color: transparent;
+    padding: 0.5em 0.5em 0.5em 2.5em;
+    font-size: 1em;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    flex: 1;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('/assets/images/sorteo/logo_instagram.webp');
+    background-size: 38px 26px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+}
+
+.input-group input.has-content {
+    background-image: none;
+}
+
+.header input {
+    padding: 5px;
+    border: none;
+    outline: none;
+    flex: 1;
+}
+
+.header button {
+    font-size: 16px;
+    margin-left: 30px;
+    padding: 8px 18px;
+    border: 2px solid #78548c;
+    background-color: transparent;
+    color: #78548c;
+    border-radius: 13px;
+    cursor: pointer;
+}
+
+.header button:hover {
+    background-color: white;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.header span {
+    margin-left: 5px;
+    color: #78548c;
+}
+
+.settings {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.setting-section {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-header {
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.section-body {
+    background-color: #000000;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+}
+
+.setting-section h3 {
+    margin-top: 0;
+    background-color: #fff;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    text-align: center;
+}
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #78548c;
+    color: #fff;
+    padding: 10px;
+    border-radius: 25px;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.setting-item button {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.name {
+    font-size: 1em;
+    outline: none;
+    border: none;
+    flex: 1;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('/assets/images/sorteo/user.png');
+    background-size: 25px 18px;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.name::placeholder {
+    color: #ffffff;
+    opacity: 1;
+}
+
+.name.has-content {
+    background-image: none;
+}
+
+.setting-raffle {
+    flex-direction: column;
+    background-color: #aceaf4;
+    padding: 0;
+    width: 100%;
+    height: 150px;
+    position: relative;
+    border-radius: 25px;
+}
+
+.setting-raffle .top-part {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #78548c;
+    padding: 10px;
+    border-radius: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.bold-colored-text {
+    color: #78548c;
+    font-weight: bold;
+}
+
+.colored-text {
+    color: rgb(54, 54, 54);
+}
+
+.setting-raffle .bottom-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 50px 10px 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+.setting-raffle .bottom-part p {
+    margin: 0;
+    text-align: center;
+    flex: 1;
+    color: #000000;
+}
+
+.setting-raffle .bottom-part .raffle-count-input {
+    background-color: #78548c;
+    color: white;
+    border-radius: 40%;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    border: none;
+    text-align: center;
+    outline: none;
+}
+
+/* Esto es cuando se quieran ingresar numeros
+.setting-raffle .bottom-part .raffle-count-input::placeholder {
+    color: #ffffff;
+    opacity: 1; 
+    font-size: 17px;
+} */
+
+.setting-raffle .bottom-part .raffle-count {
+    background-color: #78548c;
+    color: white;
+    border-radius: 30%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e4f4fc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #9d9d9d;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #ffffff;
+}
+
+input:checked+.slider:before {
+    transform: translateX(14px);
+    color: #000000;
+}
+
+.setting-participants {
+    display: flex;
+    flex-direction: column;
+    background-color: #e4f4fc;
+    padding: 0;
+    width: 100%;
+    min-height: 110px;
+    max-height: 150px;
+    border-radius: 25px;
+    overflow-y: auto;
+}
+
+.setting-participants .top-part {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #78548c;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.setting-participants .bottom-part {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 10px;
+    width: 100%;
+    border-radius: 0 0 25px 25px;
+}
+
+.setting-participants .bottom-part .participant {
+    display: flex;
+    text-align: left;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid #78548c;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.setting-participants .bottom-part p {
+    margin: 0;
+    color: #78548c;
+    flex: 1;
+}
+
+.participant-icon {
+    color: #78548c;
+    transition: color 0.3s;
+    margin-right: 10px;
+}
+
+
+.participant-icon.checked {
+    color: green;
+}
+
+
+.participant-remove:hover {
+    color: #ff0000;
+}
+
+
+.participant-remove {
+    color: #ff4d4d;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: color 0.3s;
+}
+
+.add-icon {
+    color: #78548c;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: color 0.3s;
+}
+
+.add-icon:hover {
+    color: #78548c;
+}
+
+.name-mail {
+    font-size: 1em;
+    outline: none;
+    border: none;
+    flex: 1;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    color: #78548c;
+}
+
+.name-mail::placeholder {
+    color: #78548c;
+    opacity: 1;
+}
+
+.name-mail:focus {
+    border-bottom-color: #78548c;
+    transition: border-bottom-color 0.3s;
+}
+
+.name-mail.has-content {
+    background-image: none;
+}
+
+.setting-section button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #78548c;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.setting-section input[type="number"] {
+    border: 1px solid #ccc;
+    width: 40px;
+    height: 100%;
+    border-radius: 5px;
+    text-align: center;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    background-color: #ffffff;
+}
+
+.setting-section input[type="number"]::-webkit-inner-spin-button,
+.setting-section input[type="number"]::-webkit-outer-spin-button {
+    opacity: 1;
+    /* Asegura que las flechas sean visibles en Webkit (Chrome, Safari) */
+    margin: 0;
+}
+
+.setting-section input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.publication label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #78548c;
+    color: white;
+    padding: 10px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+}
+
+.publication label i {
+    margin-left: 10px;
+}
+
+.publication ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 25px;
+    margin-bottom: 5px;
+    color: #78548c;
+}
+
+.publication ul li i {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.publication ul li i:hover {
+    color: #78548c;
+}
+
+.logo .add-icon {
+    margin-right: 20px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.logo .add-icon:hover {
+    color: #ffffff;
+}
+
+.topic .fa-th-large {
+    margin-right: 20px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.topic .fa-th-large:hover {
+    color: #ffffff;
+}
+
+/* setting publicaction y settin participant, hacen lo mismo, pero lo separe en dos, en caso de que mas adelanta vayan a cambiar algo */
+
+.setting-publication {
+    display: flex;
+    flex-direction: column;
+    background-color: #e4f4fc;
+    padding: 0;
+    width: 100%;
+    min-height: 100px;
+    max-height: 180px;
+    /* Ajusta este valor según sea necesario */
+    border-radius: 25px;
+    overflow-y: auto;
+}
+
+.setting-publication .top-part {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #78548c;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.setting-publication .bottom-part {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 10px;
+    width: 100%;
+    border-radius: 0 0 25px 25px;
+}
+
+.setting-publication .bottom-part .publication {
+    display: flex;
+    text-align: left;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid #78548c;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.setting-publication .bottom-part p {
+    margin: 0;
+    color: #78548c;
+    flex: 1;
+}
+
+.photo {
+    margin-right: 20px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.publication-icon {
+    color: #78548c;
+    transition: color 0.3s;
+    margin-right: 10px;
+}
+
+
+.publication-remove:hover {
+    color: #ff0000;
+}
+
+.publication-remove {
+    color: #ff4d4d;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: color 0.3s;
+}
+
+.start-draw-button {
+    background-color: white;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #78548c;
+    margin-top: 20px;
+    margin-left: 30px;
+    padding: 8px 18px;
+    border: 2px solid white;
+    border-radius: 13px;
+    cursor: pointer;
+}
+
+.start-draw-button:hover {
+    background-color: transparent;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+@media (max-width: 1200px) {
+    .settings {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .setting-section {
+        max-width: 45%;
+        min-width: 45%;
+        margin: 20px 10px;
+    }
+
+    .setting-section:nth-child(3) {
+        max-width: 90%;
+    }
+    .header button {
+        margin-left: 0px;
+    }
+    .start-draw-button {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 800px) {
+    .header {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .setting-section {
+        max-width: 90%;
+        min-width: 90%;
+        margin: 20px 0;
+    }
+
+    .input-group {
+        display: flex;
+        align-items: center;
+        border: 2px solid #7d3c98;
+        background-color: white;
+        border-radius: 15px;
+        padding: 5px;
+        width: 350px;
+    }
+    
+    .input-group input {
+        background-position: 0px center;
+    }
+
+    .header button {
+        margin-left: 0px;
+    }
+    .start-draw-button {
+        margin-left: 0px;
+    }
+
+    .winner-announcement {
+        margin-top: 20px;
+        font-size: 1.5em;
+        color: green;
+        font-weight: bold;
+        text-align: center;
+      }
+
+}
+
+/* Overlay to cover the whole screen */
+.popup-overlay {
+    position: fixed; /* Ensures the overlay is positioned relative to the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensure it appears above other content */
+  }
+  
+  /* The content of the pop-up */
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    max-width: 90%;
+    z-index: 1001; /* Ensure it appears above the overlay */
+    position: relative; /* Required to apply z-index */
+  }
+  
+  /* Optional styling for the close button */
+  .popup-content button {
+    margin-top: 10px;
+  }
+
