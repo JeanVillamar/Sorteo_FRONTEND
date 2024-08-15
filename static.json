@@ -1,0 +1,6 @@
+{
+  "root": "dist/frontend/browser",
+  "routes": {
+    "/**": "index.html"
+  }
+}
