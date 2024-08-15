@@ -15,7 +15,7 @@
         [class.selected]="isSelected(photo.id)"
         (click)="selectPhoto(photo.id)"
       >
-        <img [src]="photo.image.source" [alt]="'Photo ' + photo.id">
+        <img [src]="photo.image.source" [alt]="'Photo ' + photo.id" >
         <!-- <div class="image-name">{{ photo.id }}</div> Aquí se muestra el ID de la foto -->
       </div>
     </div>

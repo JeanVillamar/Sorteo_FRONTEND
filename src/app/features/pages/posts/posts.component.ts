@@ -84,6 +84,8 @@ export class PostsComponent implements OnInit {
       response => console.log(response.message),
       error => console.error(error)
     );
+    this.router.navigate(['/home']);
+  
   }
 
   isSelected(photoId: string): boolean {
