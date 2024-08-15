@@ -113,12 +113,24 @@
     </div>
     <button class="start-draw-button" (click)="randomSelection()">¡Empezar Sorteo!</button>
     
-    <!-- Popup overlay -->
-    <div *ngIf="showPopup" class="popup-overlay">
-        <div class="popup-content">
-        <h2>Ganadores</h2>
-        <p *ngFor="let winner of winners">¡El participante ganador es: {{ winner }}!</p>
-        <button (click)="closePopup()">Cerrar</button>
+<!-- Popup overlay -->
+<div *ngIf="showPopup" class="popup-overlay">
+    <div class="popup-content">
+        <div class="bottom-part participants-list">
+            <div *ngFor="let participant of participants; let i = index" class="participant" [class.highlight]="i === highlightedIndex">
+                <p (click)="toggleCheck(i)">{{ participant.name }}</p>
+                <i class="fas fa-check participant-icon" [ngClass]="{'checked': participant.checked}"
+                    (click)="toggleCheck(i)"></i>
+                <i class="fas fa-trash participant-remove" (click)="removeParticipant(i)"></i>
+            </div>
         </div>
+        <!-- Mostrar el mensaje de ganadores después de las animaciones -->
+        <div *ngIf="showWinnersMessage">
+            <h2>Ganadores</h2>
+            <p *ngFor="let winner of winners">¡El participante ganador es: {{ winner }}!</p>
+        </div>
+        <button (click)="closePopup()">Cerrar</button>
     </div>
+</div>
+
 </div>

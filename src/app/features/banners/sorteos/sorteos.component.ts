@@ -15,22 +15,27 @@ export class SorteosComponent {
       inputElement.classList.remove('has-content');
     }
   }
+
   participants: { name: string, checked: boolean }[] = [
     { name: 'Ana Lucia', checked: false },
     { name: 'Carlos Andres', checked: false },
     // { name: 'Maria Fernada', checked: false },
     // { name: 'Jose Miguel', checked: false }
   ];
+
   newParticipant: string = '';
   numWinners: number = 1;
   winners: string[] = [];
   showPopup: boolean = false;
+  highlightedIndex: number = -1;
+  showWinnersMessage: boolean = false;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
     this.loadParticipantsFromFile();
   }
+
   loadParticipantsFromFile(): void {
     this.authService.getPhotoNames().subscribe(
       (photoNames: string[]) => {
@@ -65,25 +70,68 @@ export class SorteosComponent {
   ];
 
   toggleUp() {
-    // Algun metodo que quieran usar
+    // Algún método que quieran usar
   }
 
   removePublication(index: number) {
     this.publications.splice(index, 1);
   }
 
-  selectRandomParticipant(): string | null {
-    const availableParticipants = this.participants.filter(participant => !participant.checked);
-    if (availableParticipants.length > 0) {
-      const randomIndex = Math.floor(Math.random() * availableParticipants.length);
-      return availableParticipants[randomIndex].name;
+  startHighlightAnimationForWinner(winnerIndex: number, callback: () => void) {
+    let cycles = 0;
+    const maxCycles = 2;
+    let index = 0;
+    const delayBeforeMarking = 1000; // Retraso de 1 segundo antes de marcar
+
+    this.highlightedIndex = -1;
+    this.showPopup = true;
+
+    const interval = setInterval(() => {
+      this.highlightedIndex = index;
+
+      if (index === winnerIndex && cycles >= maxCycles) {
+        clearInterval(interval);
+        
+        // Espera un tiempo antes de marcar al ganador y mostrar el mensaje
+        setTimeout(() => {
+          this.highlightedIndex = -1;
+          callback();
+        }, delayBeforeMarking);
+        
+        return;
+      }
+
+      index++;
+
+      if (index >= this.participants.length) {
+        index = 0;
+        cycles++;
+      }
+    }, 200);
+  }
+
+  startHighlightAnimationForWinners(currentWinnerIndex: number = 0) {
+    if (currentWinnerIndex >= this.numWinners || currentWinnerIndex >= this.winners.length) {
+      this.showWinnersMessage = true;
+      return;
     }
-    return null; // Retorna null si no hay participantes disponibles
+
+    const winnerName = this.winners[currentWinnerIndex];
+    const winnerIndex = this.participants.findIndex(
+      (participant) => participant.name === winnerName
+    );
+
+    this.startHighlightAnimationForWinner(winnerIndex, () => {
+      // Marcar al ganador como checked después de la animación
+      this.participants[winnerIndex].checked = true;
+      this.startHighlightAnimationForWinners(currentWinnerIndex + 1);
+    });
   }
 
   randomSelection() {
     this.winners = [];
-    this.showPopup = false; // Asegúrate de ocultar el pop-up antes de abrirlo de nuevo
+    this.showPopup = false;
+    this.showWinnersMessage = false;
 
     const availableParticipants = this.participants.filter(participant => !participant.checked);
     if (availableParticipants.length > 0) {
@@ -91,13 +139,10 @@ export class SorteosComponent {
         const randomIndex = Math.floor(Math.random() * availableParticipants.length);
         const winner = availableParticipants.splice(randomIndex, 1)[0];
         this.winners.push(winner.name);
-
-        const index = this.participants.findIndex(p => p.name === winner.name);
-        if (index !== -1) {
-          this.participants[index].checked = true;
-        }
       }
-      this.showPopup = true;
+
+      // Start animation and mark winners only after animation ends
+      this.startHighlightAnimationForWinners();
     } else {
       console.log('No hay suficientes participantes disponibles para seleccionar.');
     }
@@ -106,5 +151,4 @@ export class SorteosComponent {
   closePopup() {
     this.showPopup = false;
   }
-
 }

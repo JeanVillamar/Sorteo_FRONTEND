@@ -705,3 +705,52 @@ input:checked+.slider:before {
     margin-top: 10px;
   }
 
+  .participants-list {
+    position: relative;
+}
+
+.participant {
+    position: relative;
+    padding: 10px;
+}
+
+.arrow-image {
+    width: 24px; /* Ajusta el tamaño según sea necesario */
+    height: 24px; /* Ajusta el tamaño según sea necesario */
+    display: inline-block;
+  }
+  
+  .arrow {
+    position: relative;
+    /* Ajusta la posición si es necesario */
+  }
+  
+  .highlight {
+    background-color: #f0f0f0; /* Cambia esto si es necesario */
+    border: 2px solid #000; /* Cambia esto si es necesario */
+  }
+
+.start-button {
+    position: relative;
+    z-index: 1; /* Asegura que el botón no interfiera con la animación */
+}
+
+/* Pop-up para la animación */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1500;
+}
+
+/* Pop-up de ganadores para asegurarse de que está encima */
+.winner-popup {
+    z-index: 2000; /* Mayor que el pop-up de animación */
+}
+
+
