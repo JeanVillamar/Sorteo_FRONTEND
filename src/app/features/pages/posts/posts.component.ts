@@ -23,7 +23,7 @@ export class PostsComponent implements OnInit {
   selectedPhotoId: string | null = null;  // Para rastrear la foto seleccionada
   nextUrl: string | null = null;  // Para almacenar la URL de la siguiente página
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
   
   ngOnInit(): void {
     this.loadPhotos();
